@@ -1,0 +1,128 @@
+:root {
+  --bg-nav: #2c2c2e;
+  --nav-h1: #edf0f0;
+  --btn-h: #9bcc5f;
+  --black: #000000;
+  --card-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(27, 27, 27, 0.08) 0px 0px 0px 1px;
+  --card-shadow-h: rgba(0, 0, 0, 0.08) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+body {
+  width: 100%;
+  font-family: monospace, sans-serif;
+  line-height: 1.3em;
+}
+
+.container {
+  padding: 0 3em;
+  margin: 0 auto;
+}
+#logo {
+  max-width: 2em;
+}
+
+#nav {
+  display: flex;
+  gap: 1em;
+  padding: 1em 3em;
+  align-items: center;
+
+  background: var(--bg-nav);
+}
+main {
+  padding: 1em 0;
+}
+
+h1 {
+  color: var(--nav-h1);
+  font-size: 2em;
+  line-height: 1em;
+  font-weight: bold;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 100%;
+  justify-content: space-between;
+  gap: 1em;
+}
+.card-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 1em 1em;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+.card {
+  flex: 0 0 30%;
+
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+.card img {
+  width: 100%;
+}
+
+.card-header {
+  text-align: center;
+}
+.button-container {
+  font-size: 0;
+}
+.btn {
+  padding: 1em;
+  border: 1px solid var(--black);
+  border-radius: 0.5em;
+  background-color: transparent;
+}
+.btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+.btn:hover {
+  background: var(--btn-h);
+  opacity: 0.7;
+  transition: 0.3s;
+}
+@media only screen and (max-width: 992px) {
+  body {
+    font-size: 1.3em;
+  }
+  .container {
+    padding: 0 1em;
+  }
+  .card {
+    flex: 0 0 40%;
+  }
+  .card-container {
+    justify-content: space-around;
+  }
+  .card:last-child {
+    justify-content: flex-end;
+  }
+}
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 1.5em;
+  }
+  .card {
+    flex: 0 0 80%;
+  }
+}
